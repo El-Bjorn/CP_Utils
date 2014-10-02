@@ -50,11 +50,23 @@
     // setup HTTP request
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
-    NSURLConnection *connection= [[NSURLConnection alloc] initWithRequest:request
-                                                                 delegate:self];
+    
+    // send request
+    NSURLResponse *resp = nil;
+    NSError *err = nil;
+    NSData *respData = [NSURLConnection sendSynchronousRequest:request returningResponse:&resp error:&err];
+    
+    // parse json
+    err=nil;
+    NSDictionary *authDict = [NSJSONSerialization JSONObjectWithData:respData options:NSJSONReadingAllowFragments error:&err];
+    if (!authDict) {
+        NSLog(@"Error parsing JSON: %@",err);
+    } else {
+        NSLog(@"authDict= %@",authDict);
+        return authDict[@"return"];
+    }
     return nil;
 }
-
 
 
 @end
