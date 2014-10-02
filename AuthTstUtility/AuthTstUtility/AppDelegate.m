@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AuthNetworking.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +17,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    AuthNetworking *auth = [[AuthNetworking alloc] init];
+    [auth requestAuthToken];
+    
+    
+    
     // Override point for customization after application launch.
     return YES;
 }

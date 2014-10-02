@@ -16,6 +16,8 @@
 		4007CA7A19DCC4B100FA5151 /* AuthTstUtilityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4007CA7919DCC4B100FA5151 /* AuthTstUtilityTests.m */; };
 		4007CA8519DCC76B00FA5151 /* Crypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 4007CA8419DCC76B00FA5151 /* Crypto.m */; };
 		4007CA8619DCC76B00FA5151 /* Crypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 4007CA8419DCC76B00FA5151 /* Crypto.m */; };
+		4007CA8919DCF6D500FA5151 /* AuthNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4007CA8819DCF6D500FA5151 /* AuthNetworking.m */; };
+		4007CA8A19DCF6D500FA5151 /* AuthNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4007CA8819DCF6D500FA5151 /* AuthNetworking.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		4007CA7919DCC4B100FA5151 /* AuthTstUtilityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthTstUtilityTests.m; sourceTree = "<group>"; };
 		4007CA8319DCC76B00FA5151 /* Crypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crypto.h; sourceTree = "<group>"; };
 		4007CA8419DCC76B00FA5151 /* Crypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Crypto.m; sourceTree = "<group>"; };
+		4007CA8719DCF6D500FA5151 /* AuthNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthNetworking.h; sourceTree = "<group>"; };
+		4007CA8819DCF6D500FA5151 /* AuthNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthNetworking.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 				4007CA5D19DCC4B100FA5151 /* Supporting Files */,
 				4007CA8319DCC76B00FA5151 /* Crypto.h */,
 				4007CA8419DCC76B00FA5151 /* Crypto.m */,
+				4007CA8719DCF6D500FA5151 /* AuthNetworking.h */,
+				4007CA8819DCF6D500FA5151 /* AuthNetworking.m */,
 			);
 			path = AuthTstUtility;
 			sourceTree = "<group>";
@@ -225,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4007CA8919DCF6D500FA5151 /* AuthNetworking.m in Sources */,
 				4007CA8519DCC76B00FA5151 /* Crypto.m in Sources */,
 				4007CA6619DCC4B100FA5151 /* ViewController.m in Sources */,
 				4007CA6319DCC4B100FA5151 /* AppDelegate.m in Sources */,
@@ -237,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4007CA8619DCC76B00FA5151 /* Crypto.m in Sources */,
+				4007CA8A19DCF6D500FA5151 /* AuthNetworking.m in Sources */,
 				4007CA7A19DCC4B100FA5151 /* AuthTstUtilityTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
