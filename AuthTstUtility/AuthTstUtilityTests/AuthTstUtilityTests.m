@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import "Crypto.h"
+#import "AuthNetworking.h"
 
 @interface AuthTstUtilityTests : XCTestCase
 
@@ -36,6 +37,14 @@
     NSString *hashResult = [crypt signWithKey:secretKey usingData:auth_request];
     NSLog(@"hashResult= %@",hashResult);
     XCTAssertTrue([hashResult isEqualToString:desiredHash]);    
+}
+
+-(void) testAuth {
+    AuthNetworking *auth = [[AuthNetworking alloc] init];
+
+    NSString *authToken = [auth requestAuthTokenForUser:@"demouser" withPasswd:@"password1"];
+    NSLog(@"auth token= %@",authToken);
+    XCTAssertNotNil(authToken);
 }
 
 - (void)testExample {

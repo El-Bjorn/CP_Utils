@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     AuthNetworking *auth = [[AuthNetworking alloc] init];
-    NSString *authToken = [auth requestAuthToken];
+    NSString *authToken = [auth requestAuthTokenForUser:@"demouser" withPasswd:@"password1"];
     NSLog(@"authorization token: %@",authToken);
     
     

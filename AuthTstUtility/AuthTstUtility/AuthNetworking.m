@@ -20,7 +20,7 @@
 
 @implementation AuthNetworking
 
--(NSString*) requestAuthToken {
+-(NSString*) requestAuthTokenForUser:(NSString *)user withPasswd:(NSString *)password {
     Crypto *crypt = [[Crypto alloc] init];
     
     NSURL *url = [NSURL URLWithString:AUTH_REQ_URL];
@@ -31,8 +31,8 @@
     NSString *authRequest = [NSString stringWithFormat:@"%@?access_key=%@&username=%@&password=%@",
                                                                         AUTH_REQ_PATH,
                                                                         ACCESS_KEY,
-                                                                        CP_USER_NAME,
-                                                                        CP_PASSWORD];
+                                                                        user,
+                                                                        password];
     NSLog(@"auth Request: %@",authRequest);
     
     // generate SHA256 hash signature
