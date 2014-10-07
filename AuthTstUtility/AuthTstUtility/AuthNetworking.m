@@ -20,7 +20,7 @@
 
 @implementation AuthNetworking
 
--(NSString*) requestAuthTokenForUser:(NSString *)user withPasswd:(NSString *)password {
+-(void) requestAuthTokenForUser:(NSString *)user withPasswd:(NSString *)password {
     Crypto *crypt = [[Crypto alloc] init];
     
     NSURL *url = [NSURL URLWithString:AUTH_REQ_URL];
@@ -50,22 +50,30 @@
     // setup HTTP request
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    // send request
-    NSURLResponse *resp = nil;
-    NSError *err = nil;
-    NSData *respData = [NSURLConnection sendSynchronousRequest:request returningResponse:&resp error:&err];
-    
-    // parse json
-    err=nil;
-    NSDictionary *authDict = [NSJSONSerialization JSONObjectWithData:respData options:NSJSONReadingAllowFragments error:&err];
-    if (!authDict) {
-        NSLog(@"Error parsing JSON: %@",err);
-    } else {
-        NSLog(@"authDict= %@",authDict);
-        return authDict[@"return"];
-    }
-    return nil;
+
+    // do request and set 'self.authToken' if successful
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[[NSOperationQueue alloc] init]
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+                               if (data) {
+                                   NSError *err = nil;
+                                   NSDictionary *authDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&err];
+                                   if (!authDict) {
+                                       NSLog(@"Error parsing JSON: %@",err);
+                                   } else {
+                                       NSLog(@"Setting auth token");
+                                       self.authToken = authDict[@"return"]; // success
+                                   }
+                               } else { // no data for some reason
+                                   NSString *errString;
+                                   if (connectionError) {
+                                       errString = [connectionError localizedDescription];
+                                   } else {
+                                       NSLog(@"Mystery connection error for request: %@",request);
+                                   }
+                                   
+                               }
+                           }];
 }
 
 

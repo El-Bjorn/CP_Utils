@@ -11,20 +11,28 @@
 
 @interface AppDelegate ()
 
+@property (nonatomic,strong) AuthNetworking *auth;
+
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    AuthNetworking *auth = [[AuthNetworking alloc] init];
-    NSString *authToken = [auth requestAuthTokenForUser:@"demouser" withPasswd:@"password1"];
-    NSLog(@"authorization token: %@",authToken);
+    self.auth = [[AuthNetworking alloc] init];
+    // register authToken observer
+    [self.auth addObserver:self forKeyPath:@"authToken" options:0 context:nil];
+    // make auth token request
+    [self.auth requestAuthTokenForUser:@"demouser" withPasswd:@"password1"];
     
     
     
     // Override point for customization after application launch.
     return YES;
+}
+
+-(void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    NSLog(@"auth token set to: %@",self.auth.authToken);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

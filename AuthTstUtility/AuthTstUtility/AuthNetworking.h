@@ -10,6 +10,8 @@
 
 @interface AuthNetworking : NSObject
 
--(NSString*) requestAuthTokenForUser:(NSString*)user withPasswd:(NSString*)password;
+-(void) requestAuthTokenForUser:(NSString*)user withPasswd:(NSString*)password;
+
+@property (nonatomic,strong) NSString *authToken;
 
 @end

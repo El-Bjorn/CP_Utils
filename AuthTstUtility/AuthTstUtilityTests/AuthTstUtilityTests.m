@@ -39,13 +39,13 @@
     XCTAssertTrue([hashResult isEqualToString:desiredHash]);    
 }
 
--(void) testAuth {
+/*-(void) testAuth {
     AuthNetworking *auth = [[AuthNetworking alloc] init];
 
     NSString *authToken = [auth requestAuthTokenForUser:@"demouser" withPasswd:@"password1"];
     NSLog(@"auth token= %@",authToken);
     XCTAssertNotNil(authToken);
-}
+} */
 
 - (void)testExample {
     // This is an example of a functional test case.
