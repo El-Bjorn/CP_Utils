@@ -20,7 +20,7 @@
 
 @implementation AuthNetworking
 
--(void) requestAuthTokenForUser:(NSString *)user withPasswd:(NSString *)password {
+-(void) requestAuthTokenForUser:(NSString *)user withPasswd:(NSString *)password andCompletionBlock:(void (^)(void))compBlk {
     Crypto *crypt = [[Crypto alloc] init];
     
     NSURL *url = [NSURL URLWithString:AUTH_REQ_URL];
@@ -63,6 +63,7 @@
                                    } else {
                                        NSLog(@"Setting auth token");
                                        self.authToken = authDict[@"return"]; // success
+                                       compBlk();
                                    }
                                } else { // no data for some reason
                                    NSString *errString;

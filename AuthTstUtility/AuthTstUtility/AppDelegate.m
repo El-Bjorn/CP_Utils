@@ -20,19 +20,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.auth = [[AuthNetworking alloc] init];
-    // register authToken observer
-    [self.auth addObserver:self forKeyPath:@"authToken" options:0 context:nil];
+    
     // make auth token request
-    [self.auth requestAuthTokenForUser:@"demouser" withPasswd:@"password1"];
+    [self.auth requestAuthTokenForUser:@"demouser" withPasswd:@"password1" andCompletionBlock:^{
+                                NSLog(@"auth token set to: %@",self.auth.authToken);
+                            }];
     
     
     
     // Override point for customization after application launch.
     return YES;
-}
-
--(void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    NSLog(@"auth token set to: %@",self.auth.authToken);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
