@@ -22,14 +22,16 @@
     self.auth = [[AuthNetworking alloc] init];
     
     // make auth token request
-    [self.auth requestAuthTokenForUser:@"demouser" withPasswd:@"password1" andCompletionBlock:^{
-                                NSLog(@"auth token set to: %@",self.auth.authToken);
-                            }];
-    
-    
-    
-    // Override point for customization after application launch.
+    [self.auth requestAuthTokenForUser:@"demouser"
+                            withPasswd:@"password1"
+                    andCompletionBlock:^{
+                                            [self dispAuthToken];
+                                        }];
     return YES;
+}
+
+-(void) dispAuthToken {
+    NSLog(@"auth token set to: %@",self.auth.authToken);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
