@@ -13,5 +13,6 @@
 -(void) requestAuthTokenForUser:(NSString*)user withPasswd:(NSString*)password andCompletionBlock:(void (^)(void))compBlk;
 
 @property (nonatomic,strong) NSString *authToken;
+@property (nonatomic,strong) NSString *errString;
 
 @end

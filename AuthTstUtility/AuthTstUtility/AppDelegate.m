@@ -27,11 +27,22 @@
                     andCompletionBlock:^{
                                             [self dispAuthToken];
                                         }];
+    [self.auth requestAuthTokenForUser:@"gonzo"
+                            withPasswd:@"chickens"
+                    andCompletionBlock:^{
+                        [self dispAuthToken];
+                    }];
+
     return YES;
 }
 
 -(void) dispAuthToken {
-    NSLog(@"auth token set to: %@",self.auth.authToken);
+    if (self.auth.authToken) {
+        NSLog(@"auth successful. Token set to: %@",self.auth.authToken);
+    } else if (self.auth.errString) {
+        NSLog(@"auth failed. Error: %@",self.auth.errString);
+    }
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -9,7 +9,11 @@
 #import "AuthNetworking.h"
 #import "Crypto.h"
 
+//#define AUTH_DEBUG
+
 #define AUTH_REQ_URL @"https://dev.copatient.com/api/account/authenticate"
+//#define AUTH_REQ_URL @"https://dev.google.com/api/account/auth"   // should fail
+
 #define AUTH_REQ_PATH @"/api/account/authenticate"
 
 #define ACCESS_KEY @"630ac3f4c85b2e7c7c828ee048f7b3d9936312a3fff1a33648bfb34c146ec532"
@@ -33,11 +37,15 @@
                                                                         ACCESS_KEY,
                                                                         user,
                                                                         password];
+#ifdef AUTH_DEBUG
     NSLog(@"auth Request: %@",authRequest);
+#endif
     
     // generate SHA256 hash signature
     NSString *hashValue = [crypt signWithKey:SECRET_KEY usingData:authRequest];
+#ifdef AUTH_DEBUG
     NSLog(@"hash value: %@",hashValue);
+#endif
     
     
     NSString *postString = [NSString stringWithFormat:@"access_key=%@&username=%@&password=%@&signature=%@",
@@ -45,33 +53,50 @@
                                                                         CP_USER_NAME,
                                                                         CP_PASSWORD,
                                                                         hashValue];
+#ifdef AUTH_DEBUG
     NSLog(@"postString = %@",postString);
+#endif
     
     // setup HTTP request
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
 
     // do request and set 'self.authToken' if successful
+    self.authToken = nil;
+    self.errString = nil;
     [NSURLConnection sendAsynchronousRequest:request
                                        queue:[[NSOperationQueue alloc] init]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
                                if (data) {
                                    NSError *err = nil;
+                                   self.errString = nil;
+                                   self.authToken = nil;
+                                   
                                    NSDictionary *authDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&err];
                                    if (!authDict) {
+#ifdef AUTH_DEBUG
                                        NSLog(@"Error parsing JSON: %@",err);
+#endif
+                                       self.errString = @"JSON parse error";
                                    } else {
-                                       NSLog(@"Setting auth token");
-                                       self.authToken = authDict[@"return"]; // success
-                                       compBlk();
+#ifdef AUTH_DEBUG
+                                       NSLog(@"return message: %@", authDict);
+#endif
+                                       if ([authDict[@"success"] boolValue] == YES) {
+                                           self.authToken = authDict[@"return"]; // auth success
+                                       } else {
+                                           self.errString = authDict[@"error"]; // auth failed
+                                       }
                                    }
-                               } else { // no data for some reason
-                                   NSString *errString;
+                                   compBlk();
+                               } else { // network error
                                    if (connectionError) {
-                                       errString = [connectionError localizedDescription];
+                                       self.errString = [connectionError localizedDescription];
                                    } else {
-                                       NSLog(@"Mystery connection error for request: %@",request);
+                                       self.errString = @"Unknown connection error";
+ 
                                    }
+                                   compBlk();
                                    
                                }
                            }];
