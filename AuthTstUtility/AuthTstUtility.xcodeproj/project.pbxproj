@@ -10,7 +10,7 @@
 		04C9A0DB19E91E5600BEB264 /* Temporary.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C9A0DA19E91E5600BEB264 /* Temporary.xcassets */; };
 		4007CA6019DCC4B100FA5151 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4007CA5F19DCC4B100FA5151 /* main.m */; };
 		4007CA6319DCC4B100FA5151 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4007CA6219DCC4B100FA5151 /* AppDelegate.m */; };
-		4007CA6619DCC4B100FA5151 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4007CA6519DCC4B100FA5151 /* ViewController.m */; };
+		4007CA6619DCC4B100FA5151 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4007CA6519DCC4B100FA5151 /* LoginViewController.m */; };
 		4007CA6919DCC4B100FA5151 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4007CA6719DCC4B100FA5151 /* Main.storyboard */; };
 		4007CA6B19DCC4B100FA5151 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4007CA6A19DCC4B100FA5151 /* Images.xcassets */; };
 		4007CA6E19DCC4B100FA5151 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4007CA6C19DCC4B100FA5151 /* LaunchScreen.xib */; };
@@ -38,8 +38,8 @@
 		4007CA5F19DCC4B100FA5151 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4007CA6119DCC4B100FA5151 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4007CA6219DCC4B100FA5151 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4007CA6419DCC4B100FA5151 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4007CA6519DCC4B100FA5151 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4007CA6419DCC4B100FA5151 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		4007CA6519DCC4B100FA5151 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		4007CA6819DCC4B100FA5151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4007CA6A19DCC4B100FA5151 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4007CA6D19DCC4B100FA5151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -93,12 +93,12 @@
 			children = (
 				4007CA6119DCC4B100FA5151 /* AppDelegate.h */,
 				4007CA6219DCC4B100FA5151 /* AppDelegate.m */,
-				4007CA6419DCC4B100FA5151 /* ViewController.h */,
-				04C9A0DA19E91E5600BEB264 /* Temporary.xcassets */,
-				4007CA6519DCC4B100FA5151 /* ViewController.m */,
+				4007CA6419DCC4B100FA5151 /* LoginViewController.h */,
+				4007CA6519DCC4B100FA5151 /* LoginViewController.m */,
 				4007CA6719DCC4B100FA5151 /* Main.storyboard */,
-				4007CA6A19DCC4B100FA5151 /* Images.xcassets */,
 				4007CA6C19DCC4B100FA5151 /* LaunchScreen.xib */,
+				4007CA6A19DCC4B100FA5151 /* Images.xcassets */,
+				04C9A0DA19E91E5600BEB264 /* Temporary.xcassets */,
 				4007CA5D19DCC4B100FA5151 /* Supporting Files */,
 				4007CA8319DCC76B00FA5151 /* Crypto.h */,
 				4007CA8419DCC76B00FA5151 /* Crypto.m */,
@@ -238,7 +238,7 @@
 			files = (
 				4007CA8919DCF6D500FA5151 /* AuthNetworking.m in Sources */,
 				4007CA8519DCC76B00FA5151 /* Crypto.m in Sources */,
-				4007CA6619DCC4B100FA5151 /* ViewController.m in Sources */,
+				4007CA6619DCC4B100FA5151 /* LoginViewController.m in Sources */,
 				4007CA6319DCC4B100FA5151 /* AppDelegate.m in Sources */,
 				4007CA6019DCC4B100FA5151 /* main.m in Sources */,
 			);
