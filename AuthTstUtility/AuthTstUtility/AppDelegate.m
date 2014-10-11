@@ -23,7 +23,7 @@
     
     // make auth token request
     [self.auth requestAuthTokenForUser:@"demouser"
-                            withPasswd:@"password1"
+                            withPasswd:@"password1XXX"
                     andCompletionBlock:^{
                                             [self dispAuthToken];
                                         }];

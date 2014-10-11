@@ -1,25 +1,96 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreyBackground" translatesAutoresizingMaskIntoConstraints="NO" id="7Ka-Q7-J7l" userLabel="Background Image">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login" translatesAutoresizingMaskIntoConstraints="NO" id="3hL-fz-Yxv" userLabel="Temp">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N4H-2Z-P9C">
+                                <rect key="frame" x="43" y="165" width="235" height="27"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="235" id="U5c-IU-RGq"/>
+                                    <constraint firstAttribute="height" constant="27" id="eng-VW-Mbw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="boT-jz-MRQ">
+                                <rect key="frame" x="42" y="201" width="235" height="27"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="RHH-SP-aLY"/>
+                                    <constraint firstAttribute="width" constant="235" id="yKN-jj-Kud"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iy9-8Y-1hg">
+                                <rect key="frame" x="93" y="439" width="135" height="48"/>
+                                <color key="backgroundColor" red="0.39607843139999999" green="0.73725490199999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135" id="dNG-Jv-tz2"/>
+                                    <constraint firstAttribute="height" constant="48" id="kE6-jZ-dwb"/>
+                                </constraints>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Za9-BL-rOC">
+                                <rect key="frame" x="75" y="91" width="171" height="48"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="40"/>
+                                <color key="textColor" red="0.396078431372549" green="0.73725490196078436" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="boT-jz-MRQ" secondAttribute="centerX" constant="0.5" id="7Xm-nG-Doo"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="7Ka-Q7-J7l" secondAttribute="bottom" id="9wo-yz-A50"/>
+                            <constraint firstAttribute="centerX" secondItem="Za9-BL-rOC" secondAttribute="centerX" id="H1w-Ij-oeY"/>
+                            <constraint firstItem="iy9-8Y-1hg" firstAttribute="top" secondItem="boT-jz-MRQ" secondAttribute="bottom" constant="211" id="Pkb-tS-EHP"/>
+                            <constraint firstItem="7Ka-Q7-J7l" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-20" id="PyN-Tj-mvK"/>
+                            <constraint firstAttribute="centerX" secondItem="N4H-2Z-P9C" secondAttribute="centerX" constant="-0.5" id="XSQ-cQ-9qq"/>
+                            <constraint firstAttribute="centerY" secondItem="Za9-BL-rOC" secondAttribute="centerY" constant="169" id="bPu-fX-6d7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3hL-fz-Yxv" secondAttribute="trailing" constant="-16" id="cHF-VP-Rf6"/>
+                            <constraint firstItem="3hL-fz-Yxv" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-20" id="dfU-Yw-uCb"/>
+                            <constraint firstItem="N4H-2Z-P9C" firstAttribute="top" secondItem="Za9-BL-rOC" secondAttribute="bottom" constant="26" id="dzW-CZ-ZPi"/>
+                            <constraint firstItem="3hL-fz-Yxv" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="eQE-QD-X1s"/>
+                            <constraint firstItem="7Ka-Q7-J7l" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="kfL-2X-BqB"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="3hL-fz-Yxv" secondAttribute="bottom" id="leu-Gu-eCD"/>
+                            <constraint firstItem="boT-jz-MRQ" firstAttribute="top" secondItem="N4H-2Z-P9C" secondAttribute="bottom" constant="9" id="nCR-4q-I4j"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7Ka-Q7-J7l" secondAttribute="trailing" constant="-16" id="ogU-dC-fus"/>
+                            <constraint firstAttribute="centerX" secondItem="iy9-8Y-1hg" secondAttribute="centerX" constant="-0.5" id="sQT-hr-eRY"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="GreyBackground" width="320" height="568"/>
+        <image name="Login" width="321" height="569"/>
+    </resources>
 </document>
