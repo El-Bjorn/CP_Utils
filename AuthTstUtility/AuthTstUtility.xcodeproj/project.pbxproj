@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04C9A0DB19E91E5600BEB264 /* Temporary.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C9A0DA19E91E5600BEB264 /* Temporary.xcassets */; };
+		04D6146519ED1A3E003AED14 /* SuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D6146419ED1A3E003AED14 /* SuccessViewController.m */; };
 		4007CA6019DCC4B100FA5151 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4007CA5F19DCC4B100FA5151 /* main.m */; };
 		4007CA6319DCC4B100FA5151 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4007CA6219DCC4B100FA5151 /* AppDelegate.m */; };
 		4007CA6619DCC4B100FA5151 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4007CA6519DCC4B100FA5151 /* LoginViewController.m */; };
@@ -33,6 +34,8 @@
 
 /* Begin PBXFileReference section */
 		04C9A0DA19E91E5600BEB264 /* Temporary.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Temporary.xcassets; sourceTree = "<group>"; };
+		04D6146319ED1A3E003AED14 /* SuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuccessViewController.h; sourceTree = "<group>"; };
+		04D6146419ED1A3E003AED14 /* SuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuccessViewController.m; sourceTree = "<group>"; };
 		4007CA5A19DCC4B100FA5151 /* AuthTstUtility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuthTstUtility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4007CA5E19DCC4B100FA5151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4007CA5F19DCC4B100FA5151 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -96,6 +99,8 @@
 				4007CA6419DCC4B100FA5151 /* LoginViewController.h */,
 				4007CA6519DCC4B100FA5151 /* LoginViewController.m */,
 				4007CA6719DCC4B100FA5151 /* Main.storyboard */,
+				04D6146319ED1A3E003AED14 /* SuccessViewController.h */,
+				04D6146419ED1A3E003AED14 /* SuccessViewController.m */,
 				4007CA6C19DCC4B100FA5151 /* LaunchScreen.xib */,
 				4007CA6A19DCC4B100FA5151 /* Images.xcassets */,
 				04C9A0DA19E91E5600BEB264 /* Temporary.xcassets */,
@@ -240,6 +245,7 @@
 				4007CA8519DCC76B00FA5151 /* Crypto.m in Sources */,
 				4007CA6619DCC4B100FA5151 /* LoginViewController.m in Sources */,
 				4007CA6319DCC4B100FA5151 /* AppDelegate.m in Sources */,
+				04D6146519ED1A3E003AED14 /* SuccessViewController.m in Sources */,
 				4007CA6019DCC4B100FA5151 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,6 +376,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1c55d07b-4cc5-466d-921c-13eb479b564f";
 			};
 			name = Debug;
 		};
@@ -383,6 +390,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5F47DD4D-7489-4CCF-9136-82DE3778A981";
 			};
 			name = Release;
 		};

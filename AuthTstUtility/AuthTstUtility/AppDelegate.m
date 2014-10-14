@@ -19,21 +19,23 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    self.window.tintColor = [UIColor colorWithRed:101/255.0f green:188/255.0f blue:94/255.0f alpha:1.0f];
+//    [self testRequest];
+    
+    return YES;
+}
+
+- (void)testRequest {
+    
     self.auth = [[AuthNetworking alloc] init];
     
     // make auth token request
     [self.auth requestAuthTokenForUser:@"demouser"
-                            withPasswd:@"password1XXX"
-                    andCompletionBlock:^{
-                                            [self dispAuthToken];
-                                        }];
-    [self.auth requestAuthTokenForUser:@"gonzo"
-                            withPasswd:@"chickens"
+                            withPasswd:@"password1"
                     andCompletionBlock:^{
                         [self dispAuthToken];
                     }];
-
-    return YES;
 }
 
 -(void) dispAuthToken {

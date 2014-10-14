@@ -10,4 +10,6 @@
 
 @interface SuccessViewController : UIViewController
 
+@property (nonatomic, strong) NSString *token;
+
 @end
