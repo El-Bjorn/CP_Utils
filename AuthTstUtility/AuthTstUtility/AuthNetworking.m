@@ -65,7 +65,7 @@
     self.authToken = nil;
     self.errString = nil;
     [NSURLConnection sendAsynchronousRequest:request
-                                       queue:[[NSOperationQueue alloc] init]
+                                       queue:[NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
                                if (data) {
                                    NSError *err = nil;
