@@ -65,7 +65,7 @@
     self.authToken = nil;
     self.errString = nil;
     [NSURLConnection sendAsynchronousRequest:request
-                                       queue:[NSOperationQueue mainQueue]
+                                       queue:[[NSOperationQueue alloc] init]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
                                if (data) {
                                    NSError *err = nil;
@@ -88,7 +88,7 @@
                                            self.errString = authDict[@"error"]; // auth failed
                                        }
                                    }
-                                   compBlk();
+                                   dispatch_async(dispatch_get_main_queue(), compBlk);
                                } else { // network error
                                    if (connectionError) {
                                        self.errString = [connectionError localizedDescription];
@@ -96,7 +96,7 @@
                                        self.errString = @"Unknown connection error";
  
                                    }
-                                   compBlk();
+                                   dispatch_async(dispatch_get_main_queue(), compBlk);
                                    
                                }
                            }];
