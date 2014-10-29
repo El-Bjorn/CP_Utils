@@ -15,28 +15,15 @@
 		4007CA6919DCC4B100FA5151 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4007CA6719DCC4B100FA5151 /* Main.storyboard */; };
 		4007CA6B19DCC4B100FA5151 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4007CA6A19DCC4B100FA5151 /* Images.xcassets */; };
 		4007CA6E19DCC4B100FA5151 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4007CA6C19DCC4B100FA5151 /* LaunchScreen.xib */; };
-		4007CA7A19DCC4B100FA5151 /* AuthTstUtilityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4007CA7919DCC4B100FA5151 /* AuthTstUtilityTests.m */; };
 		4007CA8519DCC76B00FA5151 /* Crypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 4007CA8419DCC76B00FA5151 /* Crypto.m */; };
-		4007CA8619DCC76B00FA5151 /* Crypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 4007CA8419DCC76B00FA5151 /* Crypto.m */; };
 		4007CA8919DCF6D500FA5151 /* AuthNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4007CA8819DCF6D500FA5151 /* AuthNetworking.m */; };
-		4007CA8A19DCF6D500FA5151 /* AuthNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4007CA8819DCF6D500FA5151 /* AuthNetworking.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		4007CA7419DCC4B100FA5151 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4007CA5219DCC4B100FA5151 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4007CA5919DCC4B100FA5151;
-			remoteInfo = AuthTstUtility;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		04C9A0DA19E91E5600BEB264 /* Temporary.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Temporary.xcassets; sourceTree = "<group>"; };
 		04D6146319ED1A3E003AED14 /* SuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuccessViewController.h; sourceTree = "<group>"; };
 		04D6146419ED1A3E003AED14 /* SuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuccessViewController.m; sourceTree = "<group>"; };
-		4007CA5A19DCC4B100FA5151 /* AuthTstUtility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuthTstUtility.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4007CA5A19DCC4B100FA5151 /* CoPatient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoPatient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4007CA5E19DCC4B100FA5151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4007CA5F19DCC4B100FA5151 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4007CA6119DCC4B100FA5151 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -46,7 +33,6 @@
 		4007CA6819DCC4B100FA5151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4007CA6A19DCC4B100FA5151 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4007CA6D19DCC4B100FA5151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		4007CA7319DCC4B100FA5151 /* AuthTstUtilityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuthTstUtilityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4007CA7819DCC4B100FA5151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4007CA7919DCC4B100FA5151 /* AuthTstUtilityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthTstUtilityTests.m; sourceTree = "<group>"; };
 		4007CA8319DCC76B00FA5151 /* Crypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crypto.h; sourceTree = "<group>"; };
@@ -57,13 +43,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		4007CA5719DCC4B100FA5151 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4007CA7019DCC4B100FA5151 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -85,8 +64,7 @@
 		4007CA5B19DCC4B100FA5151 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4007CA5A19DCC4B100FA5151 /* AuthTstUtility.app */,
-				4007CA7319DCC4B100FA5151 /* AuthTstUtilityTests.xctest */,
+				4007CA5A19DCC4B100FA5151 /* CoPatient.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,26 +134,8 @@
 			);
 			name = CoPatient;
 			productName = AuthTstUtility;
-			productReference = 4007CA5A19DCC4B100FA5151 /* AuthTstUtility.app */;
+			productReference = 4007CA5A19DCC4B100FA5151 /* CoPatient.app */;
 			productType = "com.apple.product-type.application";
-		};
-		4007CA7219DCC4B100FA5151 /* AuthTstUtilityTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4007CA8019DCC4B100FA5151 /* Build configuration list for PBXNativeTarget "AuthTstUtilityTests" */;
-			buildPhases = (
-				4007CA6F19DCC4B100FA5151 /* Sources */,
-				4007CA7019DCC4B100FA5151 /* Frameworks */,
-				4007CA7119DCC4B100FA5151 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4007CA7519DCC4B100FA5151 /* PBXTargetDependency */,
-			);
-			name = AuthTstUtilityTests;
-			productName = AuthTstUtilityTests;
-			productReference = 4007CA7319DCC4B100FA5151 /* AuthTstUtilityTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -189,10 +149,6 @@
 					4007CA5919DCC4B100FA5151 = {
 						CreatedOnToolsVersion = 6.0.1;
 						DevelopmentTeam = 58CQP95QD3;
-					};
-					4007CA7219DCC4B100FA5151 = {
-						CreatedOnToolsVersion = 6.0.1;
-						TestTargetID = 4007CA5919DCC4B100FA5151;
 					};
 				};
 			};
@@ -210,7 +166,6 @@
 			projectRoot = "";
 			targets = (
 				4007CA5919DCC4B100FA5151 /* CoPatient */,
-				4007CA7219DCC4B100FA5151 /* AuthTstUtilityTests */,
 			);
 		};
 /* End PBXProject section */
@@ -224,13 +179,6 @@
 				04C9A0DB19E91E5600BEB264 /* Temporary.xcassets in Resources */,
 				4007CA6E19DCC4B100FA5151 /* LaunchScreen.xib in Resources */,
 				4007CA6B19DCC4B100FA5151 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4007CA7119DCC4B100FA5151 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,25 +198,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4007CA6F19DCC4B100FA5151 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4007CA8619DCC76B00FA5151 /* Crypto.m in Sources */,
-				4007CA8A19DCF6D500FA5151 /* AuthNetworking.m in Sources */,
-				4007CA7A19DCC4B100FA5151 /* AuthTstUtilityTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4007CA7519DCC4B100FA5151 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4007CA5919DCC4B100FA5151 /* CoPatient */;
-			targetProxy = 4007CA7419DCC4B100FA5151 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4007CA6719DCC4B100FA5151 /* Main.storyboard */ = {
@@ -371,12 +301,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Built Light, Inc. (58CQP95QD3)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AuthTstUtility/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5F47DD4D-7489-4CCF-9136-82DE3778A981";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -385,46 +316,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Built Light, Inc. (58CQP95QD3)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AuthTstUtility/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5F47DD4D-7489-4CCF-9136-82DE3778A981";
-			};
-			name = Release;
-		};
-		4007CA8119DCC4B100FA5151 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = AuthTstUtilityTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AuthTstUtility.app/AuthTstUtility";
-			};
-			name = Debug;
-		};
-		4007CA8219DCC4B100FA5151 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = AuthTstUtilityTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AuthTstUtility.app/AuthTstUtility";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -445,15 +343,6 @@
 			buildConfigurations = (
 				4007CA7E19DCC4B100FA5151 /* Debug */,
 				4007CA7F19DCC4B100FA5151 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4007CA8019DCC4B100FA5151 /* Build configuration list for PBXNativeTarget "AuthTstUtilityTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4007CA8119DCC4B100FA5151 /* Debug */,
-				4007CA8219DCC4B100FA5151 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
