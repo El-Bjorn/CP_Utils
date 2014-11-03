@@ -49,7 +49,8 @@
     path = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"CoPatientTstPDF"];
     
     UIGraphicsBeginPDFContextToFile(path, CGRectZero, nil);
-    UIGraphicsBeginPDFPageWithInfo(CGRectZero, nil);
+    //UIGraphicsBeginPDFPageWithInfo(CGRectZero, nil);
+    UIGraphicsBeginPDFPageWithInfo(CGRectMake(0, 0, img.size.width, img.size.height), nil);
     
     [img drawAtPoint:CGPointZero];
     UIGraphicsEndPDFContext();
