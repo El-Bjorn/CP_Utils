@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Authenticating CoPatient user..."
+echo "Authenticating CoPatient user..." >&2
 
 # 'openssl' must be 1.0.1+, or some version that does SHA256
 #	  note: the mac one is 9.8 and doesn't do SHA256
@@ -32,4 +32,6 @@ full_URI=$CP_URL$authent_URI
 #echo "full_URI= $full_URI"
 
 # take out or add '-v' depending on whether you want the details
-/usr/bin/curl --data $post_param $full_URI 
+# '-s' suppresses the meter
+# jsawk extracts the 'return' element from the JSON dictionary, i.e. the token
+/usr/bin/curl -s --data $post_param $full_URI | jsawk 'return this.return'
