@@ -6,8 +6,10 @@ echo "Authenticating CoPatient user..." >&2
 #	  note: the mac one is 9.8 and doesn't do SHA256
 openssl=/opt/local/bin/openssl
 
-user="demouser"
-password="password1"
+#user="demouser"
+user="alextest"
+#password="password1"
+password="q1w2e3r4"
 
 access_key="630ac3f4c85b2e7c7c828ee048f7b3d9936312a3fff1a33648bfb34c146ec532"
 secret_key="fd9bbb59fa527dc161b08f3df2d5e2aa6db0017447c3001420b0a4033c6e4cbe"
