@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # usage: ./list_files.sh $(./authenticate.sh)
+#     or: ./list_files.sh $(./signup.sh firstname ...)
 
 echo "Listing CoPatient associated with account..." 
 

@@ -1,13 +1,14 @@
 #!/bin/bash
 
 # usage: ./signup.sh firstname lastname email passwd username
-# NOTE: the '@' in the email address must be replaced with '%40'
+# NOTE: the '@' in the email address will be replaced with '%40'
 
-echo "Signing up for CoPatient..." 
+echo "Signing up for CoPatient..." >&2
 
 firstname=$1
 lastname=$2
-email=$3
+email=$(echo "$3" | sed 's/@/%40/')
+#echo "email= $email" >&2
 passwd=$4
 username=$5
 
@@ -24,20 +25,20 @@ signup_URI="/api/account/signup"
 
 signup_request=$signup_URI'?access_key='$access_key'&firstname='$firstname'&lastname='$lastname'&email='$email'&password='$passwd'&confirm='$passwd'&terms=1&username='$username
 
-echo "signup_request = $signup_request"
+echo "signup_request = $signup_request" >&2
 
 raw_hash_value=$(echo -n $signup_request | $openssl sha256 -hmac $secret_key)
 #echo "raw openssl output:  $raw_hash_value"
 
 #  strip off the pointless '(stdin)=' field that some openssls return
 hash_value=$(echo -n $raw_hash_value | awk '{print $2}') 
- echo "hash_value= $hash_value"
+echo "hash_value= $hash_value" >&2
 
 post_param='access_key='$access_key'&firstname='$firstname'&lastname='$lastname'&email='$email'&password='$passwd'&confirm='$passwd'&terms=1&username='$username'&signature='$hash_value
-echo "post_param= $post_param"
+echo "post_param= $post_param" >&2
 
 full_URI=$CP_URL$signup_URI
-echo "full_URI= $full_URI"
+echo "full_URI= $full_URI" >&2
 
 # take out or add '-v' depending on whether you want the details
-/usr/bin/curl --data $post_param $full_URI 
+/usr/bin/curl --data $post_param $full_URI | jsawk 'return this.return'
