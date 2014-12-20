@@ -2,6 +2,11 @@
 
 # usage: ./list_files.sh $(./authenticate.sh)
 #     or: ./list_files.sh $(./signup.sh firstname ...)
+#		or: ./list_file.sh token
+if (( $# != 1)); then
+	echo "Missing token parameter: usage: ./list_files.sh token"
+	exit
+fi
 
 echo "Listing CoPatient associated with account..." 
 
