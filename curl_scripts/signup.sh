@@ -2,6 +2,10 @@
 
 # usage: ./signup.sh firstname lastname email passwd username
 # NOTE: the '@' in the email address will be replaced with '%40'
+if (( $# != 5 )); then
+	echo "wrong number of args: usage: ./signup.sh firstname lastname email passwd username"
+	exit
+fi
 
 echo "Signing up for CoPatient..." >&2
 
@@ -33,6 +37,8 @@ raw_hash_value=$(echo -n $signup_request | $openssl sha256 -hmac $secret_key)
 #  strip off the pointless '(stdin)=' field that some openssls return
 hash_value=$(echo -n $raw_hash_value | awk '{print $2}') 
 echo "hash_value= $hash_value" >&2
+# testing
+#hash_value="IUYTVIUYBUIOIUBOUB"
 
 post_param='access_key='$access_key'&firstname='$firstname'&lastname='$lastname'&email='$email'&password='$passwd'&confirm='$passwd'&terms=1&username='$username'&signature='$hash_value
 echo "post_param= $post_param" >&2
@@ -41,4 +47,5 @@ full_URI=$CP_URL$signup_URI
 echo "full_URI= $full_URI" >&2
 
 # take out or add '-v' depending on whether you want the details
-/usr/bin/curl --data $post_param $full_URI | jsawk 'return this.return'
+# '-s' to suppress meter
+/usr/bin/curl -s --data $post_param $full_URI #| jsawk 'return this.return'
